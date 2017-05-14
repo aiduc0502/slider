@@ -1,9 +1,22 @@
-mixin slider(title, content, date, itemtitle, href)
-  - if (typeof(itemtitle) === 'undefined') itemtitle = title
-  .item-article
-    .header
-      h3.title-item
-        +link(title=title,href=href)!=itemtitle
-      span.date!=date
-    .shorttext
-      p!=content
+.slider-container
+  .slider
+    +slider-item( 'images/upload/slider.jpg',
+          'slider-1',
+          '1At Naturetour we are constantly adding to and improving our portfolio of wildlife holidays to provide you with an even greater choice of wildlife viewing experiences we are constantly adding to and improving.'
+          )
+    +slider-item( 'images/upload/slider.jpg',
+          'slider-2',
+          '2At Naturetour we are constantly adding to and improving our portfolio of wildlife holidays to provide you with an even greater choice of wildlife viewing experiences we are constantly adding to and improving.'
+          )
+    +slider-item( 'images/upload/slider.jpg',
+          'slider-3',
+          '3At Naturetour we are constantly adding to and improving our portfolio of wildlife holidays to provide you with an even greater choice of wildlife viewing experiences we are constantly adding to and improving.'
+    )
+    +slider-item( 'images/upload/slider.jpg',
+          'slider-4',
+          '4At Naturetour we are constantly adding to and improving our portfolio of wildlife holidays to provide you with an even greater choice of wildlife viewing experiences we are constantly adding to and improving.'
+    )
+  .slider-switch.slider-switch-prev(data-ikslider-dir="prev")
+    span.prev
+  .slider-switch.slider-switch-next(data-ikslider-dir="next")
+    span.next
