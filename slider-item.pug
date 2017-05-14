@@ -1,0 +1,37 @@
+mixin slider-item(src, alt, text)
+  .slider-item
+    +img(src=src, alt=alt)
+    .slide
+      p.slider-caption
+          if block
+            block
+          else
+            !=text
+
+//- mixin slider-item(src, alt, text)
+//-   .slider-item
+//-     +img(src=src, alt=alt)
+//-     .content
+//-       p
+//-         if block
+//-           block
+//-         else
+//-           !=text
+
+
+mixin slider-item-1(obj)
+  - if (typeof(obj.src1) === 'undefined') obj.src1 = 'images/transparent.png'
+  - if (typeof(obj.src2) === 'undefined') obj.src2 = 'images/transparent.png'
+  - if (typeof(obj.alt1) === 'undefined') obj.alt1 = obj.title1
+  - if (typeof(obj.alt2) === 'undefined') obj.alt2 = obj.title2
+  - if (typeof(obj.href1) === 'undefined') obj.href1 = '#'
+  - if (typeof(obj.href2) === 'undefined') obj.href2 = '#'
+  if (obj.type)
+    div.slide
+      +link(href=obj.href1, title=obj.title1)
+        +img(src=obj.src1, alt=obj.title1)
+      +link(href=obj.href2, title=obj.title2)
+        +img(src=obj.src2, alt=obj.title2)
+  else
+    div.slide
+      +img(src=obj.src, alt=obj.alt)
