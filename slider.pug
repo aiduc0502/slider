@@ -1,0 +1,9 @@
+mixin slider(title, content, date, itemtitle, href)
+  - if (typeof(itemtitle) === 'undefined') itemtitle = title
+  .item-article
+    .header
+      h3.title-item
+        +link(title=title,href=href)!=itemtitle
+      span.date!=date
+    .shorttext
+      p!=content

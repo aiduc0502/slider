@@ -1,0 +1,134 @@
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #444;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.slider {
+  position: relative;
+  width: 9999px;
+  &:before {
+    display: table;
+    content: ' ';
+  }
+  &:after {
+    display: table;
+    content: ' ';
+    clear: both;
+  }
+}
+.slider-item {
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  .slide {
+    .px2em(~'font-size', 12px, @font-size-base);
+    line-height: 1.5;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background: #000;
+    color: #fff;
+    padding: 9px 10px;
+    .border-radius(null null 5px 5px);
+    p {
+      max-width: 85%;
+    }
+  }
+}
+.slider-switch {
+  span {
+    color: #fff;
+    display: block;
+    width: 32px;
+    height: 45px;
+  }
+
+  position: absolute;
+  top: 39%;
+  margin-top: -20px;
+  padding: 10px 0px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  border-radius: 1px;
+  transition: opacity .15s ease;
+  fill: #fff;
+  opacity: 0.3;
+  &:hover {
+    opacity: .85;
+  }
+}
+.slider-switch-prev {
+  left: 10px;
+}
+.slider-switch-next {
+  right: 10px;
+  
+}
+.slider-switch[disabled] {
+  visibility: hidden;
+  opacity: 0;
+}
+.slider-nav {
+  float: right;
+  bottom: 0px;
+  right: 0;
+  position: absolute;
+  .size(148px, 51px); 
+  border-left: 1px solid #494949;
+  text-align: center;
+  padding: 13px;
+}
+.slider-nav-control {
+
+  display: inline-block;
+  margin: 0 3px;
+  -webkit-transition: background .5s ease;
+  -moz-transition: background .5s ease;
+  -o-transition: background .5s ease;
+  transition: background .5s ease;
+  border-radius: 50%;
+  background: transparent;
+  .size(23px, 23px);
+  line-height: 23px;
+  color: #fff;
+  text-align: center;
+  background-color: #6b685e;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+}
+.slider-nav-control.active {
+  background-color: #ffc700;
+  background: linear-gradient(#ffc700, #ff9200);
+  width: 27px;
+  height: 27px;
+  color: #fff;
+  line-height: 25px;
+}
+.slider.has-touch {
+  cursor: move;
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+}

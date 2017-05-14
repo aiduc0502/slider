@@ -1,0 +1,29 @@
+header.main-header
+  +img('Logo', '../images/logo.png').logo
+  button(type='button').navbar-btn &#9776;
+  .navbar-wrapper
+    .navbar-right
+      +form({
+        id: 'search-form',
+        action: '#',
+        method: 'post'
+      }).search-form
+        +input({
+          id: 'search-input',
+          placeholder: 'Search'
+        }).search-input
+        +input({
+          id: 'search-btn',
+          type: 'submit',
+          text: 'Search'
+        }).search-btn
+      ul.language
+        li
+          a(href='#',title='Vietnamese').vn
+        li
+          a(href='#',title='English').en
+        li
+          a(href='#',title='Russia').ru
+    nav.navbar
+       +nav([{title: 'ABOUT US', href: '#'}, {title: 'SERVICES', href: '#'}, {title: 'NEWS & EVENTS', href: '#'}, {title: 'GALLERY', href: '#'}, {title: 'CONTACT US', href: '#'}, {title: 'FAQs', href: '#'}])
+
